@@ -54,7 +54,10 @@ export default function NavBar() {
           </IconButton>
 
           <Typography variant="h6" className={classes.title}>
-            Fit.Sharkk
+            <NavLink to="/">
+              {" "}
+              <p> Fit.Sharkk</p>{" "}
+            </NavLink>
           </Typography>
 
           <NavLink to="/cart">

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSaveLaterContext } from "../../Context/SaveLaterContext/SaveLaterContext";
 import Button from "@material-ui/core/Button";
+import saveSVG from "../../SVG/save.svg";
 function SaveLater() {
   const {
     state: { saveLater },
@@ -13,6 +14,11 @@ function SaveLater() {
         {" "}
         <h3>Saved Later</h3>{" "}
       </div>
+      {saveLater.length === 0 && (
+        <div className="svg">
+          <img src={saveSVG} alt="" />
+        </div>
+      )}
       <div className="product-container cart-container">
         {saveLater.map((ele) => (
           <div className="individualProduct">

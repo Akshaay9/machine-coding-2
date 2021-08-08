@@ -15,4 +15,5 @@ h6 {
 }
 a {
   color: inherit !important;
+  text-decoration: none;
 }

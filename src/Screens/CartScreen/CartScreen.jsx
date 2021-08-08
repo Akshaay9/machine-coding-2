@@ -2,6 +2,7 @@ import React from "react";
 import { useCartContext } from "../../Context/CartContext/CartContext";
 import "./CartScreen.css";
 import Products from "../../Components/ProductListing/Products";
+import cartSVG from "../../SVG/cart.svg";
 function CartScreen() {
   const {
     state: { cart },
@@ -27,6 +28,12 @@ function CartScreen() {
         {" "}
         <h3>Cart Items</h3>{" "}
       </div>
+
+      {cart.length === 0 && (
+        <div className="svg">
+          <img src={cartSVG} alt="" />
+        </div>
+      )}
 
       <div className="product-container cart-container">
         {cart.map((ele) => (
