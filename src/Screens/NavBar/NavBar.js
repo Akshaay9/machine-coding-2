@@ -10,6 +10,7 @@ import Badge from "@material-ui/core/Badge";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext/CartContext";
+import { useSaveLaterContext } from "../../Context/SaveLaterContext/SaveLaterContext";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -28,6 +29,10 @@ export default function NavBar() {
   const {
     state: { cart },
   } = useCartContext();
+
+  const {
+    state: { saveLater },
+  } = useSaveLaterContext();
 
   const cartLength = () => {
     return cart.length === 0
@@ -61,7 +66,7 @@ export default function NavBar() {
           </NavLink>
           <NavLink to="/saved">
             <Button color="inherit">
-              <Badge badgeContent={5} color="secondary">
+              <Badge badgeContent={saveLater.length} color="secondary">
                 <BookmarkIcon />
               </Badge>
             </Button>

@@ -1,7 +1,5 @@
-import { useContext, useReducer } from "react";
+import { useContext, useReducer, createContext } from "react";
 import { cartReducerFun } from "./CartReducer";
-
-const { createContext } = require("react");
 
 const cartContext = createContext();
 

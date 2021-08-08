@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import { useCartContext } from "../../Context/CartContext/CartContext";
 import "./Products.css";
 import { useLocation } from "react-router";
+import { useSaveLaterContext } from "../../Context/SaveLaterContext/SaveLaterContext";
 
 function Products({ ele }) {
   const {
@@ -10,8 +11,12 @@ function Products({ ele }) {
     cartDispatch,
   } = useCartContext();
 
-  const location = useLocation();
+  const {
+    state: { saveLater },
+    saveDispatch,
+  } = useSaveLaterContext();
 
+  const location = useLocation();
   const isItemOnCart = (prod) => {
     const isItemonCart = cart.some((ele) => ele.id === prod.id);
     if (!isItemonCart) {
@@ -75,6 +80,15 @@ function Products({ ele }) {
     return Proditem.cartQty * Proditem.price;
   };
 
+  const saveLaterFun = (prod) => {
+    const saved = saveLater.some((ele) => ele.id === prod.id);
+    if (saved) {
+      return <i class="fas fa-bookmark"></i>;
+    } else {
+      return <i class="far fa-bookmark"></i>;
+    }
+  };
+
   return (
     <div className="individualProduct">
       <div className="product-container">
@@ -82,6 +96,14 @@ function Products({ ele }) {
         <div className="product-desc">
           <h5>{ele.name}</h5>
           <p>₹{ele.price}</p>
+          {location.pathname.includes("cart") && (
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() => saveDispatch({ type: "SAVE_LATER", payload: ele })}
+            >
+              {saveLaterFun(ele)}
+            </div>
+          )}
         </div>
         <div className="product-container-CTA">
           <div style={{ display: "flex" }}>
