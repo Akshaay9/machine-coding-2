@@ -1,0 +1,15 @@
+.cta-flex > div {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.cta-flex button {
+  font-weight: bolder;
+
+}
+.cta-flex span {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+}
