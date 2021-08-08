@@ -8,6 +8,8 @@ import IconButton from "@material-ui/core/IconButton";
 import ShopIcon from "@material-ui/icons/Shop";
 import Badge from "@material-ui/core/Badge";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
+import { NavLink } from "react-router-dom";
+import { useCartContext } from "../../Context/CartContext/CartContext";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -23,9 +25,19 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
   const classes = useStyles();
 
+  const {
+    state: { cart },
+  } = useCartContext();
+
+  const cartLength = () => {
+    return cart.length === 0
+      ? 0
+      : cart.reduce((acc, ele) => (acc += Number(ele.cartQty)), 0);
+  };
+
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"
@@ -35,19 +47,25 @@ export default function NavBar() {
           >
             {/* <MenuIcon /> */}
           </IconButton>
+
           <Typography variant="h6" className={classes.title}>
             Fit.Sharkk
           </Typography>
-          <Button color="inherit">
-            <Badge badgeContent={5} color="secondary">
-              <ShopIcon />
-            </Badge>
-          </Button>
-          <Button color="inherit">
-            <Badge badgeContent={5} color="secondary">
-              <BookmarkIcon />
-            </Badge>
-          </Button>
+
+          <NavLink to="/cart">
+            <Button color="inherit">
+              <Badge badgeContent={cartLength()} color="secondary">
+                <ShopIcon />
+              </Badge>
+            </Button>
+          </NavLink>
+          <NavLink to="/saved">
+            <Button color="inherit">
+              <Badge badgeContent={5} color="secondary">
+                <BookmarkIcon />
+              </Badge>
+            </Button>
+          </NavLink>
         </Toolbar>
       </AppBar>
     </div>

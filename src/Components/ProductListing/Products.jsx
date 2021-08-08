@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { useCartContext } from "../../Context/CartContext/CartContext";
 import "./Products.css";
+import { useLocation } from "react-router";
 
 function Products({ ele }) {
   const {
@@ -9,19 +10,22 @@ function Products({ ele }) {
     cartDispatch,
   } = useCartContext();
 
-  console.log(cart);
+  const location = useLocation();
 
   const isItemOnCart = (prod) => {
     const isItemonCart = cart.some((ele) => ele.id === prod.id);
     if (!isItemonCart) {
       return (
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: prod })}
-        >
-          Add To Cart
-        </Button>
+        <>
+          <span></span>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: prod })}
+          >
+            Add To Cart
+          </Button>
+        </>
       );
     } else {
       const Proditem = cart.find((ele) => ele.id === prod.id);
@@ -61,23 +65,59 @@ function Products({ ele }) {
     }
   };
 
+  const getQty = (prodID) => {
+    const Proditem = cart.find((ele) => ele.id === prodID);
+    return Proditem.cartQty;
+  };
+
+  const getPrice = (prodID) => {
+    const Proditem = cart.find((ele) => ele.id === prodID);
+    return Proditem.cartQty * Proditem.price;
+  };
+
   return (
     <div className="individualProduct">
       <div className="product-container">
         <img src={ele.images[0].img} alt="" />
         <div className="product-desc">
-          <h4>{ele.name}</h4>
-          <p>{ele.price}</p>
+          <h5>{ele.name}</h5>
+          <p>₹{ele.price}</p>
         </div>
-        <div
-          className="product-container-CTA"
-          style={{ display: "flex", alignItems: "center" }}
-        >
-          <h5>Brand</h5> : <p>{ele.tag}</p>
+        <div className="product-container-CTA">
+          <div style={{ display: "flex" }}>
+            <h5>Brand</h5> : <p>{ele.tag}</p>
+          </div>
+
+          {location.pathname.includes("cart") && (
+            <div style={{ display: "flex" }}>
+              {" "}
+              <h5>Quantity</h5> : <p>{getQty(ele.id)}</p>
+            </div>
+          )}
+
+          {location.pathname.includes("cart") && (
+            <div style={{ display: "flex" }}>
+              {" "}
+              <h5>Total Price</h5> : <p>₹{getPrice(ele.id)}</p>
+            </div>
+          )}
         </div>
 
         {isItemOnCart(ele)}
       </div>
+      {location.pathname.includes("cart") && (
+        <div style={{ marginLeft: "4.5rem" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              cartDispatch({ type: "REMOVE_ITEM", payload: ele.id })
+            }
+          >
+            Remove from cart
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
