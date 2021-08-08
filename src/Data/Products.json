@@ -1,0 +1,148 @@
+[
+  {
+    "id": 1,
+    "name": "ESSENTIAL OVERSIZED T-SHIRT",
+    "tag": "nike",
+    "price": 1000,
+    "color": "Light Green",
+    "category": "MensNewDrop",
+    "size": ["s", "m"],
+    "idealFor": ["men"],
+    "items": 5,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/OVERSIZEDESSENTIALSST-SHIRTSAGEGREEN.D1-Edit_BK_438x.jpg?v=1615305736"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "ESSENTIAL Black T-SHIRT",
+    "tag": "nike",
+    "price": 1150,
+    "color": "Light Black",
+    "category": "MensNewDrop",
+    "size": ["s", "m", "l"],
+    "idealFor": ["men"],
+    "items": 3,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/OVERSIZEDESSENTIALSST-SHIRTBLACK.A-Edit_BK_885x.jpg?v=1615148603"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ESSENTIAL White Oversized T-SHIRT",
+    "tag": "adidas",
+    "price": 850,
+    "color": "White",
+    "category": "MensNewDrop",
+    "size": ["s", "m", "l", "xl"],
+    "idealFor": ["men", "women"],
+    "items": 7,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/OVERSIZEDESSENTIALSST-SHIRTWHITE.A-Edit_BK_885x.jpg?v=1615148617"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "ESSENTIAL Light Gray T-SHIRT",
+    "tag": "adidas",
+    "price": 380,
+    "color": "Light Gray",
+    "category": "MensNewDrop",
+    "size": ["s", "m", "l"],
+    "idealFor": ["men", "women"],
+    "items": 4,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/OVERSIZEDESSENTIALSST-SHIRTCHARCOALGREY.A-Edit_ZH_ZH_885x.jpg?v=1615148608"
+      }
+    ]
+  },
+
+  {
+    "id": 5,
+    "name": "Arrival T-Shirt",
+    "tag": "polo",
+    "price": 400,
+    "color": "Black/Gray camo",
+    "category": "MensNewDrop",
+    "size": ["s", "m"],
+    "idealFor": ["men", "women"],
+    "items": 2,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/ArrivalSST-ShirtBlackGreyCamoGMST5638.A-Edit_ZH_ZH_885x.jpg?v=1613989664"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Appolo T-Shirt",
+    "tag": "polo",
+    "price": 500,
+    "color": "Red",
+    "category": "MensNewDrop",
+    "size": ["x", "l"],
+    "idealFor": ["women"],
+    "items": 7,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/APOLLOMUSCLEFITSST-SHIRTSPORTSRED.A-Edit_AS_885x.jpg?v=1613989635"
+      }
+    ]
+  },
+
+  {
+    "id": 7,
+    "name": "Chalk Tank",
+    "tag": "nike",
+    "price": 700,
+    "color": "Light Sky Blue",
+    "category": "MensNewDrop",
+    "size": ["m", "xl"],
+    "idealFor": ["men"],
+    "items": 2,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/CHALKDROPARMTANKSPRINGafGREENPRINT.A-Edit_ZH_885x.jpg?v=1607946413"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "CREST ZIP UP HOODIE",
+    "tag": "buffalo",
+    "price": 790,
+    "color": "Navy Black",
+    "category": "MensNewDrop",
+    "size": ["l"],
+    "idealFor": ["men"],
+    "items": 4,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/CRESTSWEATZIPUPHOODIEBLACK.A-Edit_ZH_885x.jpg?v=1600271914"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "CREST JOGGERS",
+    "tag": "HRX",
+    "price": 999,
+    "color": "Charcoal Marl",
+    "category": "MensNewDrop",
+    "size": ["s", "m", "l"],
+    "idealFor": ["women"],
+    "items": 5,
+    "images": [
+      {
+        "img": "https://cdn.shopify.com/s/files/1/1367/5207/products/CRESTPANTSCHARCOALMARL.A-Edit_ZH_885x.jpg?v=1599234466"
+      }
+    ]
+  }
+]
