@@ -7,7 +7,7 @@ import SaveLater from "./Screens/SaveLaterScreen/SaveLater";
 
 function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -16,7 +16,7 @@ function App() {
           <Route path="/saved" element={<SaveLater />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
